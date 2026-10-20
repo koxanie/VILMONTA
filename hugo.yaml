@@ -1,0 +1,82 @@
+baseURL: "https://vilmonta.lt/"
+title: "VILMONTA – Automobilių remontas ir autoservisas Naujojoje Vilnioje"
+languageCode: "lt"
+defaultContentLanguage: "lt"
+theme: "PaperMod"
+
+disableLanguages: ["en", "pl", "ru"]
+
+languages:
+  lt:
+    languageName: "Lietuvių"
+    weight: 1
+    contentDir: "content"
+
+params:
+  env: "production"
+  description: "Profesionalus automobilių remontas Naujojoje Vilnioje nuo 1996 m. Tepalų keitimas, važiuoklės remontas, padangų montavimas, ratų suvedimas ir variklio darbai."
+  geo:
+    latitude: "54.6981"
+    longitude: "25.5012"
+    address: "Liepto g. 11, Naujoji Vilnia, LT-11101 Vilnius, Lietuva"
+  business:
+    name: "J. Olechnovičiaus personalinė įmonė „VILMONTA“"
+    foundingYear: "1996"
+    phone: "+370 5 2675498"
+    mobile: "+370 614 17183"
+    email: "vilnius.vilmonta@mail.ru"
+    areaServed: ["Naujoji Vilnia", "Vilnius", "Vilniaus rajonas"]
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+menu:
+  main:
+    - name: "Tepalai ir filtrai"
+      url: "/tepalu-filtru-keitimas/"
+      weight: 1
+
+    - name: "Važiuoklė ir stabdžiai"
+      url: "/vaziuokles-remontas/"
+      weight: 2
+
+    - name: "Ratai ir padangos"
+      url: "/padangu-montavimas-balansavimas/"
+      weight: 3
+
+    - name: "Ratų suvedimas"
+      url: "/ratu-suvedimas/"
+      weight: 4
+
+    - name: "Variklis ir aušinimas"
+      url: "/ausinimo-sistemos-remontas/"
+      weight: 5
+
+    - name: "Kontaktai"
+      url: "/kontaktai/"
+      weight: 6
+
+  footer:
+    - name: "Tepalai ir filtrai"
+      url: "/tepalu-filtru-keitimas/"
+      weight: 1
+    - name: "Važiuoklė ir stabdžiai"
+      url: "/vaziuokles-remontas/"
+      weight: 2
+    - name: "Ratai ir padangos"
+      url: "/padangu-montavimas-balansavimas/"
+      weight: 3
+    - name: "Ratų suvedimas"
+      url: "/ratu-suvedimas/"
+      weight: 4
+    - name: "Variklis ir aušinimas"
+      url: "/ausinimo-sistemos-remontas/"
+      weight: 5
+    - name: "Kontaktai ir rekvizitai"
+      url: "/kontaktai/"
+      weight: 6
+    - name: "Apie autoservisą"
+      url: "/autoservisas-vilnius/"
+      weight: 7

@@ -1,0 +1,80 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoRepair",
+  "name": "VILMONTA",
+  "legalName": "J. Olechnovičiaus personalinė įmonė „VILMONTA“",
+  "foundingDate": "1996",
+  "image": "{{ .Site.BaseURL }}images/logo.jpg",
+  "@id": "{{ .Site.BaseURL }}",
+  "url": "{{ .Permalink }}",
+  "telephone": "+37052675498",
+  "faxNumber": "+37061417183",
+  "email": "vilnius.vilmonta@mail.ru",
+  "priceRange": "€€",
+  "currenciesAccepted": "EUR",
+  "paymentAccepted": "Grynieji pinigai, Banko kortelės, Bankinis pavedimas",
+  "taxID": "LT242312210",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Liepto g. 11A",
+    "addressLocality": "Naujoji Vilnia",
+    "addressRegion": "Vilniaus m. sav.",
+    "postalCode": "LT-11119",
+    "addressCountry": "LT"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 54.698100,
+    "longitude": 25.501200
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    }
+  ],
+  "areaServed": [
+    {"@type": "AdministrativeArea", "name": "Naujoji Vilnia"},
+    {"@type": "AdministrativeArea", "name": "Pavilnys"},
+    {"@type": "AdministrativeArea", "name": "Kalnėnai"},
+    {"@type": "AdministrativeArea", "name": "Mickūnai"},
+.    {"@type": "AdministrativeArea", "name": "Vilnius"}
+  ],
+  "knowsAbout": [
+    "Variklių remontas",
+    "Aušinimo sistemos remontas",
+    "Pagrindinių diržų keitimas",
+    "Padangų montavimas ir balansavimas",
+    "Ratų geometrija",
+    "Ratlankių lyginimas ir tiesinimas",
+    "Aliuminio virinimas argono aplinkoje TIG",
+    "Važiuoklės remontas",
+    "Stabdžių remontas"
+  ]
+}
+</script>
+
+{{ if .Params.faq }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{ range $index, $element := .Params.faq }}
+    {{ if $index }},{{ end }}
+    {
+      "@type": "Question",
+      "name": "{{ $element.question }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ $element.answer }}"
+      }
+    }
+    {{ end }}
+  ]
+}
+</script>
+{{ end }}
