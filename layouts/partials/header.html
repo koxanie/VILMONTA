@@ -1,0 +1,227 @@
+<header class="header" style="position: relative; z-index: 1000; border-bottom: 1px solid var(--border, #333);">
+    <nav class="nav" style="max-width: 1200px; margin: 0 auto; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: nowrap;">
+        
+        <!-- Logo dynamicznie przełączane w zależności od motywu -->
+        <div class="logo">
+            <a href="{{ "" | absURL }}" accesskey="h" title="VILMONTA" style="display: flex; align-items: center;">
+                <img id="site-logo" src="{{ "logo-light.svg" | absURL }}" alt="VILMONTA" style="height: 35px; width: auto; display: block;">
+            </a>
+        </div>
+
+        <!-- Przycisk Hamburgera (Mobile) -->
+        <button id="custom-menu-toggle" aria-label="Menu" style="display: none; background: none; border: none; cursor: pointer; font-size: 1.8rem; padding: 8px; color: var(--primary, #fff); line-height: 1;">
+            ☰
+        </button>
+        
+        <!-- Lista menu -->
+        <ul id="custom-menu" style="display: flex; list-style: none; gap: 20px; align-items: center; margin: 0; padding: 0; white-space: nowrap;">
+            {{- range site.Menus.main -}}
+                {{- if not .Parent -}}
+                    {{- if .HasChildren -}}
+                        <li class="menu-item-has-children desktop-only" style="position: relative;">
+                            <a href="{{ .URL | absURL }}" class="menu-link" style="display: flex; align-items: center; gap: 4px;">
+                                <span>{{ .Name }}</span> ▾
+                            </a>
+                            <ul class="sub-menu">
+                                {{- range .Children -}}
+                                <li>
+                                    <a href="{{ .URL | absURL }}" class="submenu-link">
+                                        <span>{{ .Name }}</span>
+                                    </a>
+                                </li>
+                                {{- end -}}
+                            </ul>
+                        </li>
+                        <li class="mobile-only" style="display: none;">
+                            <a href="{{ .URL | absURL }}" class="menu-link">
+                                <span>{{ .Name }}</span>
+                            </a>
+                        </li>
+                    {{- else -}}
+                        <li>
+                            <a href="{{ .URL | absURL }}" class="menu-link">
+                                <span>{{ .Name }}</span>
+                            </a>
+                        </li>
+                    {{- end -}}
+                {{- end -}}
+            {{- end -}}
+
+            <!-- Przycisk zmiany motywu -->
+            {{- if not site.Params.disableThemeToggle -}}
+            <li>
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme" style="background: none; border: none; cursor: pointer; padding: 5px; display: flex; align-items: center; color: var(--primary, #fff);">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                </button>
+            </li>
+            {{- end -}}
+        </ul>
+    </nav>
+</header>
+
+<style>
+    .menu-link {
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.95rem;
+        color: var(--primary, inherit);
+        transition: opacity 0.2s;
+    }
+    .menu-link:hover {
+        opacity: 0.7;
+    }
+
+    .sub-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: var(--theme, #1d1e22);
+        border: 1px solid var(--border, #333);
+        list-style: none;
+        padding: 10px 0;
+        display: none;
+        min-width: 240px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        border-radius: 6px;
+        z-index: 1000;
+    }
+    .menu-item-has-children:hover .sub-menu {
+        display: block !important;
+    }
+    .sub-menu li {
+        padding: 0;
+        width: 100%;
+    }
+    .submenu-link {
+        display: block;
+        padding: 8px 20px;
+        text-decoration: none;
+        font-size: 0.95rem;
+        color: var(--primary, inherit);
+        transition: background 0.15s;
+    }
+    .submenu-link:hover {
+        background: rgba(128,128,128,0.15);
+    }
+
+    .mobile-only {
+        display: none !important;
+    }
+
+    /* Zwiększony próg (breakpoint) do 992px chroni przed rozjeżdżaniem na mniejszych ekranach i zoomie */
+    @media screen and (max-width: 992px) {
+        .nav {
+            position: relative;
+        }
+        #custom-menu-toggle {
+            display: block !important;
+        }
+        .desktop-only {
+            display: none !important;
+        }
+        .mobile-only {
+            display: block !important;
+        }
+
+        #custom-menu {
+            display: flex !important;
+            visibility: hidden;
+            opacity: 0;
+            flex-direction: column;
+            width: 100%;
+            background: var(--theme, #1d1e22);
+            position: absolute;
+            top: 100%;
+            left: 0;
+            padding: 25px 20px;
+            border-bottom: 2px solid var(--border, #333);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+            align-items: center !important;
+            gap: 20px !important;
+            z-index: 9999;
+            transform: translateY(-10px);
+            transition: visibility 0.2s, opacity 0.2s, transform 0.2s;
+            white-space: normal;
+        }
+        #custom-menu.mobile-open {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        #custom-menu > li {
+            width: 100%;
+            text-align: center;
+        }
+        #custom-menu .menu-link {
+            font-size: 1.15rem;
+            font-weight: 600;
+            display: block;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        .sub-menu {
+            display: none !important; 
+        }
+    }
+</style>
+
+<script>
+    (function() {
+        // Obsługa menu mobilnego
+        const menuToggle = document.getElementById("custom-menu-toggle");
+        const menu = document.getElementById("custom-menu");
+        
+        if (menuToggle && menu) {
+            menuToggle.addEventListener("click", function(e) {
+                e.stopPropagation();
+                menu.classList.toggle("mobile-open");
+                menuToggle.textContent = menu.classList.contains("mobile-open") ? "✕" : "☰";
+            });
+
+            document.addEventListener("click", function(e) {
+                if (!menu.contains(e.target) && !menuToggle.contains(e.target)) {
+                    menu.classList.remove("mobile-open");
+                    menuToggle.textContent = "☰";
+                }
+            });
+        }
+
+        // Obsługa motywu i zmiany logotypu
+        const toggleBtn = document.getElementById("theme-toggle");
+        const logoImg = document.getElementById("site-logo");
+        if (!toggleBtn) return;
+
+        const moon = document.getElementById('moon');
+        const sun = document.getElementById('sun');
+
+        function setTheme(theme) {
+            const root = document.documentElement;
+            if (theme === 'dark') {
+                root.setAttribute('data-theme', 'dark');
+                root.classList.add('dark');
+                document.body.classList.add('dark');
+                if (logoImg) logoImg.src = "{{ "logo-dark.svg" | absURL }}";
+                if (moon) moon.style.display = 'none';
+                if (sun) sun.style.display = 'block';
+            } else {
+                root.setAttribute('data-theme', 'light');
+                root.classList.remove('dark');
+                document.body.classList.remove('dark');
+                if (logoImg) logoImg.src = "{{ "logo-light.svg" | absURL }}";
+                if (moon) moon.style.display = 'block';
+                if (sun) sun.style.display = 'none';
+            }
+            localStorage.setItem("pref-theme", theme);
+        }
+
+        const savedTheme = localStorage.getItem("pref-theme") || "light";
+        setTheme(savedTheme);
+
+        toggleBtn.addEventListener("click", () => {
+            const currentTheme = localStorage.getItem("pref-theme");
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            setTheme(newTheme);
+        });
+    })();
+</script>

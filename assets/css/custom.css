@@ -1,0 +1,41 @@
+/* =================================================================
+   1. GLOBALNE ZABEZPIECZENIE RESPONSYWNOŚCI (MOBILE HORIZONTAL SCROLL)
+   ================================================================= */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/* Elastyczne skalowanie grafik, tabel i elementów multimedialnych */
+img, video, canvas, svg, table {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Zabezpieczenie kontenerów przed sztywnymi szerokościami i uciekaniem treści */
+.main, .content, .header, .footer, article, section {
+    width: 100%;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =================================================================
+   2. ORYGINALNE STYLE LOGO I MOTYWÓW
+   ================================================================= */
+/* Tło i wymiary logo renderowanego przez PaperMod */
+.nav-logo img {
+  height: 48px;
+  width: auto;
+}
+
+/* W ciemnym motywie podmieniamy plik graficzny[cite: 12] */
+html[data-theme="dark"] .nav-logo img {
+  content: url("/icons/logo-dark.svg");
+}

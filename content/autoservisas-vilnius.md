@@ -26,11 +26,20 @@ categories: ["Apie mus"]
 }
 </script>
 
-# Autoservisas VILMONTOJE – patirtis, techninis rygorius ir atsakomybė
+# Autoservisas VILMONTOJE – patirtis, techninis tikslumas ir atsakomybė
 
 J. Olechnovičiaus personalinė įmonė **„VILMONTA“** (Liepto g. 11, Naujoji Vilnia) veikia automobilių techninės priežiūros ir remonto srityje **nuo 1996 metų**. Autoservisas teikia kompleksines lengvųjų automobilių patikros, reguliarios priežiūros ir remonto darbų paslaugas Vilniuje bei Naujojoje Vilnioje. Dirbame ir šeštadieniais (pagal išankstinę registraciją).
 
-Mūsų tikslas – užtikrinti, kad kiekvienas į servisą atvykęs automobilis būtų aptarnaujamas pagal gamintojo technologines normas, o klientas gautų tikslią diagnostiką bei aiškią darbų ir dalių ataskaitą.
+Mūsų tikslas – užtikrindre, kad kiekvienas į servisą atvykęs automobilis būtų aptarnaujamas pagal gamintojo technologines normas, o klientas gautų tikslią diagnostiką bei aiškią darbų ir dalių ataskaitą.
+
+---
+
+## Patogi lokacija ir logistika vairuotojams iš rytinės regiono dalies
+
+Mūsų autoservisas Naujojoje Vilnioje (Liepto g. 11A) yra strategiškai patogioje vietoje tiems, kurie į sostinę ar per ją keliauja iš rytinės krypties. Mus labai patogu pasiekti pakeliui:
+* Vairuotojams iš **Kalvelių** ir **Mickūnų** – greitas susisiekimas be būtinybės vykti į spūstis pačiame Vilniaus centre.
+* Gyventojams iš **Pavilnio** bei **šiaurinės ir rytinės Vilniaus dalies** – artimiausia profesionali alternatyva dideliems, perkrautiems servisams.
+* Klientams iš **Grigiškių**, ieškantiems patikimo serviso su ilgamete (nuo 1996 m.) patirtimi ir aiškia kainų politika.
 
 ---
 

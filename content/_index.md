@@ -27,6 +27,15 @@ draft: false
     "latitude": 54.6981,
     "longitude": 25.5012
   },
+  "areaServed": [
+    {"@type": "AdministrativeArea", "name": "Naujoji Vilnia"},
+    {"@type": "AdministrativeArea", "name": "Kalveliai"},
+    {"@type": "AdministrativeArea", "name": "Mickūnai"},
+    {"@type": "AdministrativeArea", "name": "Grigiškės"},
+    {"@type": "AdministrativeArea", "name": "Pavilnys"},
+    {"@type": "AdministrativeArea", "name": "Vilnius"},
+    {"@type": "AdministrativeArea", "name": "Vilniaus rajonas"}
+  ],
   "openingHoursSpecification": {
     "@type": "OpeningHoursSpecification",
     "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
@@ -49,7 +58,7 @@ draft: false
 
 # Vilmonta – Kompleksinis lengvųjų automobilių servisas Vilniuje nuo 1996 m.
 
-J. Olechnovičiaus personalinė įmonė „VILMONTA” veikia nuo **1996 metų**. Teikiame profesionalias lengvųjų automobilių patikros, reguliarios priežiūros ir remonto paslaugas Vilniuje, Naujojoje Vilnioje (**Liepto g. 11A**). Atliktiems darbams, restaurotoms detalėms ir pakeistoms dalims suteikiama kokybės garantija.
+J. Olechnovičiaus personalinė įmonė „VILMONTA” veikia nuo **1996 metų**. Teikiame profesionalias lengvųjų automobilių patikros, reguliarios priežiūros ir remonto paslaugas Vilniuje, Naujojoje Vilnioje (**Liepto g. 11A**). Dėl patogios logistinės padėties mus lengvai pasiekia ir reguliariai lanko vairuotojai ne tik iš visos Naujosios Vilnios, bet ir iš **Kalvelių, Mickūnų, Grigiškių, Pavilnio** bei rytinės ir šiaurinės Vilniaus dalies. Atliktiems darbams, restaurotoms detalėms ir pakeistoms dalims suteikiama kokybės garantija.
 
 ---
 

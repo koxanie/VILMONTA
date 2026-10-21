@@ -15,10 +15,15 @@ languages:
 params:
   env: "production"
   description: "Profesionalus automobilių remontas Naujojoje Vilnioje nuo 1996 m. Tepalų keitimas, važiuoklės remontas, padangų montavimas, ratų suvedimas ir variklio darbai."
+  
+  label:
+    text: ""
+
   geo:
     latitude: "54.6981"
     longitude: "25.5012"
     address: "Liepto g. 11, Naujoji Vilnia, LT-11101 Vilnius, Lietuva"
+
   business:
     name: "J. Olechnovičiaus personalinė įmonė „VILMONTA“"
     foundingYear: "1996"

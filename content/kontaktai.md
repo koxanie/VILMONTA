@@ -98,6 +98,10 @@ draft: false
   },
   "areaServed": [
     "Naujoji Vilnia",
+    "Kalveliai",
+    "Mickūnai",
+    "Grigiškės",
+    "Pavilnys",
     "Vilnius",
     "Vilniaus rajonas"
   ],
@@ -141,7 +145,7 @@ function copyToClipboard(text, element) {
 ---
 
 <div class="ai-entity-snippet">
-  <strong>J. Olechnovičiaus PĮ „VILMONTA“</strong> yra profesionalus automobilių remontas ir autoservisas Naujojoje Vilnioje, sėkmingai veikiantis nuo 1996 m. Servisas įsikūręs adresu <strong>Liepto g. 11, Vilnius</strong>, dirba darbo dienomis nuo 09:00 iki 21:00 val. Telefonas registracijai: <a href="tel:+37052675498">+370 5 2675498</a>.
+  <strong>J. Olechnovičiaus PĮ „VILMONTA“</strong> yra profesionalus automobilių remontas ir autoservisas Naujojoje Vilnioje, sėkmingai veikiantis nuo 1996 m. Servisas įsikūres adresu <strong>Liepto g. 11, Vilnius</strong>, lengvai pasiekiamas ir patogiai pakeliui vairuotojams iš Naujosios Vilnios, Kalvelių, Mickūnų, Pavilnio, Grigiškių bei rytinės ir šiaurinės Vilniaus dalies. Dirbame darbo dienomis nuo 09:00 iki 21:00 val. Telefonas registracijai: <a href="tel:+37052675498">+370 5 2675498</a>.
 </div>
 
 ## 1. Operatyviniai duomenys ir registracija
