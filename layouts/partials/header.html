@@ -1,7 +1,7 @@
 <header class="header" style="position: relative; z-index: 1000; border-bottom: 1px solid var(--border, #333);">
     <nav class="nav" style="max-width: 1200px; margin: 0 auto; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: nowrap;">
         
-        <!-- Tekstowe logo VILMONTA z automatyczną zmianą koloru zależnie od motywu -->
+        <!-- Tekstowe logo VILMONTA -->
         <div class="logo">
             <a href="{{ "" | absURL }}" accesskey="h" title="VILMONTA" class="brand-logo-text">
                 VILMONTA
@@ -47,7 +47,7 @@
                 {{- end -}}
             {{- end -}}
 
-            <!-- Przycisk zmiany motywu -->
+            <!-- Przycisk zmiany motywu PaperMod -->
             {{- if not site.Params.disableThemeToggle -}}
             <li>
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme" style="background: none; border: none; cursor: pointer; padding: 5px; display: flex; align-items: center; color: var(--primary, #fff);">
@@ -67,14 +67,14 @@
         font-weight: 800;
         letter-spacing: 1.5px;
         text-decoration: none;
-        color: #111111; /* Kolor w trybie jasnym */
+        color: #111111;
         transition: opacity 0.2s;
     }
     .brand-logo-text:hover {
         opacity: 0.8;
     }
-    /* Automatyczna zmiana na biały w trybie ciemnym */
-    html.dark .brand-logo-text,
+    /* Zmiana na biały, gdy klasa dark jest na body lub html */
+    .dark .brand-logo-text,
     html[data-theme="dark"] .brand-logo-text {
         color: #ffffff !important;
     }
@@ -210,17 +210,14 @@
         const sun = document.getElementById('sun');
 
         function setTheme(theme) {
-            const root = document.documentElement;
             if (theme === 'dark') {
-                root.setAttribute('data-theme', 'dark');
-                root.classList.add('dark');
                 document.body.classList.add('dark');
+                document.documentElement.setAttribute('data-theme', 'dark');
                 if (moon) moon.style.display = 'none';
                 if (sun) sun.style.display = 'block';
             } else {
-                root.setAttribute('data-theme', 'light');
-                root.classList.remove('dark');
                 document.body.classList.remove('dark');
+                document.documentElement.setAttribute('data-theme', 'light');
                 if (moon) moon.style.display = 'block';
                 if (sun) sun.style.display = 'none';
             }
