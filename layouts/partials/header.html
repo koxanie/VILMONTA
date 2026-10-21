@@ -1,10 +1,10 @@
 <header class="header" style="position: relative; z-index: 1000; border-bottom: 1px solid var(--border, #333);">
     <nav class="nav" style="max-width: 1200px; margin: 0 auto; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: nowrap;">
         
-        <!-- Logo dynamicznie przełączane w zależności od motywu -->
+        <!-- Tekstowe logo VILMONTA z automatyczną zmianą koloru zależnie od motywu -->
         <div class="logo">
-            <a href="{{ "" | absURL }}" accesskey="h" title="VILMONTA" style="display: flex; align-items: center;">
-                <img id="site-logo" src="{{ "logo-light.svg" | absURL }}" alt="VILMONTA" style="height: 35px; width: auto; display: block;">
+            <a href="{{ "" | absURL }}" accesskey="h" title="VILMONTA" class="brand-logo-text">
+                VILMONTA
             </a>
         </div>
 
@@ -61,6 +61,24 @@
 </header>
 
 <style>
+    /* Styl dla tekstowego logo VILMONTA */
+    .brand-logo-text {
+        font-size: 1.5rem;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+        text-decoration: none;
+        color: #111111; /* Kolor w trybie jasnym */
+        transition: opacity 0.2s;
+    }
+    .brand-logo-text:hover {
+        opacity: 0.8;
+    }
+    /* Automatyczna zmiana na biały w trybie ciemnym */
+    html.dark .brand-logo-text,
+    html[data-theme="dark"] .brand-logo-text {
+        color: #ffffff !important;
+    }
+
     .menu-link {
         text-decoration: none;
         font-weight: 500;
@@ -186,7 +204,6 @@
         }
 
         const toggleBtn = document.getElementById("theme-toggle");
-        const logoImg = document.getElementById("site-logo");
         if (!toggleBtn) return;
 
         const moon = document.getElementById('moon');
@@ -198,14 +215,12 @@
                 root.setAttribute('data-theme', 'dark');
                 root.classList.add('dark');
                 document.body.classList.add('dark');
-                if (logoImg) logoImg.src = "{{ "logo-dark.svg" | absURL }}";
                 if (moon) moon.style.display = 'none';
                 if (sun) sun.style.display = 'block';
             } else {
                 root.setAttribute('data-theme', 'light');
                 root.classList.remove('dark');
                 document.body.classList.remove('dark');
-                if (logoImg) logoImg.src = "{{ "logo-light.svg" | absURL }}";
                 if (moon) moon.style.display = 'block';
                 if (sun) sun.style.display = 'none';
             }
